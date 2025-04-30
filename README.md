@@ -1,5 +1,19 @@
-# Vue 3 + TypeScript + Vite
+# product-card-app
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is a remote microfrontend that provides a product card component to the `main-app` via Module Federation.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Features
+
+- Displays a product card
+- Supports adding a product to the cart
+- Uses the shared global Pinia store provided by the host
+- Fully functional as a standalone app and as a remote module
+
+## Technologies
+
+- Vue 3
+- Vite
+- Pinia
+- Module Federation (originjs plugin)
+
+## Project structure
