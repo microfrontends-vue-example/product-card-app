@@ -9,7 +9,7 @@ export default defineConfig({
       name: 'product-card-app',
       filename: 'productCardEntry.js',
       remotes: {
-        mainApp: 'http://localhost:5001/assets/mainAppEntry.js'
+        mainApp: 'https://main-app-eta.vercel.app/assets/mainAppEntry.js'
       },
       exposes: {
         './ProductCard.vue': './src/components/ProductCard.vue'
