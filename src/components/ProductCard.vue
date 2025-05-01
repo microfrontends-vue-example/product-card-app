@@ -1,12 +1,13 @@
 <template>
-  <div>
-    Додані товари:
-    <pre>{{ items }}</pre>
-  </div>
   <div class="product-card">
-    <h2>{{ product.title }}</h2>
-    <p>ID: {{ product.id }}</p>
-    <button @click="addToCart">Додати у корзину</button>
+    <img :src="product.img">
+    <div class="footer">
+      <h2>{{ product.title }}</h2>
+      <div class="price">
+        <p>Price: {{ product.price }}$</p>
+        <button @click="addToCart">Add to cart</button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -17,13 +18,10 @@ import { storeToRefs } from 'pinia'
 const cartStore = useCartStore();
 const { items } = storeToRefs(cartStore);
 
-const product = {
-  id: '1',
-  title: 'Футболка Vue.js'
-}
+const props = defineProps(['product']);
 
 function addToCart() {
-  cartStore.addItem(product)
+  cartStore.addItem(props.product)
 }
 </script>
 
@@ -32,5 +30,15 @@ function addToCart() {
   border: 1px solid #ccc;
   padding: 20px;
   border-radius: 8px;
+}
+
+img {
+  width: 100%;
+}
+
+.price {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 </style>
